@@ -68,7 +68,7 @@ public class Room
      * @return ArrayList<Exit> The exits ArrayList for the room
      */
     public ArrayList<Exit> getExits(){
-    	return this.exits;
+    		return this.exits;
     }
     
     /**

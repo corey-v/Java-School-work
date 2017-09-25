@@ -18,10 +18,8 @@ public class Exit {
 	 * @param Room An object of type Room for the neighbouringRoom exit
 	 */
 	public Exit(String exitDirection, Room theRoom) {
-		if(exitDirection != null && theRoom != null) {
-			setExitDirection(exitDirection);
-			setTheRoom(theRoom);
-		}
+		setExitDirection(exitDirection);
+		setTheRoom(theRoom);
 	}
 	
 	/**
@@ -34,7 +32,9 @@ public class Exit {
 	 * @param exitDirection A String for the direction to set
 	 */
 	public void setExitDirection(String exitDirection) {
-		this.exitDirection = exitDirection;
+		if(exitDirection != null) {
+			this.exitDirection = exitDirection;
+		}
 	}
 	/**
 	 * @return Room object for the exit's Room
@@ -46,7 +46,9 @@ public class Exit {
 	 * @param theRoom object of type room for the exit's room to set
 	 */
 	public void setTheRoom(Room theRoom) {
-		this.theRoom = theRoom;
+		if(theRoom != null) {
+			this.theRoom = theRoom;
+		}
 	}
 	
 	
