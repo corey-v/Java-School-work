@@ -37,10 +37,6 @@ public class Room
         setDescription(description);
         this.exits = new ArrayList<>();
     }
-    
-    /**
-     * 
-     */
 
     /**
      * @return The description of the room as a String
@@ -73,5 +69,14 @@ public class Room
      */
     public ArrayList<Exit> getExits(){
     	return this.exits;
+    }
+    
+    /**
+     * Prints out all the available exits
+     */
+    public void printExits() {
+    	for(Exit exits: this.getExits()) {
+        	System.out.print(exits.getExitDirection() + " ");
+        }
     }
 }

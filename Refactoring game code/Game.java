@@ -1,3 +1,5 @@
+import java.util.Stack;
+
 /**
  * @author Corey Valentyne A00918598
  * 
@@ -20,6 +22,7 @@ public class Game
 {
     private Parser parser;
     private Room currentRoom;
+    private Stack<Room> route;
         
     /**
      * Create the game and initialise its internal map.
@@ -28,6 +31,7 @@ public class Game
     {
         createRooms();
         parser = new Parser();
+        route = new Stack<Room>();
     }
 
     /**
@@ -41,6 +45,7 @@ public class Game
         Room pub = new Room("in the campus pub");
         Room lab = new Room("in a computing lab");
         Room office = new Room("in the computing admin office");
+    	Room basement = new Room("the lab's basement");
     	
         //set exits
         outside.setExits(new Exit("east",theatre));
@@ -53,6 +58,9 @@ public class Game
         
         lab.setExits(new Exit("north", outside));
         lab.setExits(new Exit("east", office));
+        lab.setExits(new Exit("down", basement));
+        
+        basement.setExits(new Exit("up",lab));
         
         office.setExits(new Exit("west", lab));
         
@@ -90,9 +98,7 @@ public class Game
         System.out.println("World of Zuul is a new, incredibly boring adventure game.");
         System.out.println("Type 'help' if you need help.");
         System.out.println();
-        System.out.println("You are " + currentRoom.getDescription());
-        System.out.print("Exits: ");
-        printExits();
+        printCurrentLocation();
         
         System.out.println();
     }
@@ -118,6 +124,9 @@ public class Game
             goRoom(command);
         else if (commandWord.equals("quit"))
             wantToQuit = quit(command);
+        else if (commandWord.equals("back")) 
+        	goBack();
+        
 
         return wantToQuit;
     }
@@ -135,7 +144,7 @@ public class Game
         System.out.println("around at the university.");
         System.out.println();
         System.out.println("Your command words are:");
-        System.out.println("   go quit help");
+        System.out.println("   go back quit help");
     }
 
     /** 
@@ -164,10 +173,10 @@ public class Game
             System.out.println("There is no door!");
         }
         else {
+        	route.push(currentRoom);
+        	
             currentRoom = nextRoom;
-            System.out.println("You are " + currentRoom.getDescription());
-            System.out.print("Exits: ");
-            printExits();
+            printCurrentLocation();
             
             System.out.println();
         }
@@ -189,9 +198,26 @@ public class Game
         }
     }
     
-    private void printExits() {
-    	for(Exit exits: currentRoom.getExits()) {
-        	System.out.print(exits.getExitDirection() + " ");
-        }
+    /**
+     * Checks if the route stack is empty, if not then sets current room
+     * to the last room visited
+     */
+    private void goBack() {
+    	if(!this.route.empty()) {
+    		this.currentRoom = route.pop();
+    	}else {
+    		System.out.println("You can't go back!");
+    	}
+    	printCurrentLocation();
     }
+    
+    /**
+     * Prints out the player's current location
+     */
+    private void printCurrentLocation() {
+    	System.out.println("You are " + currentRoom.getDescription());
+        System.out.print("Exits: ");
+        currentRoom.printExits();
+    }
+    
 }

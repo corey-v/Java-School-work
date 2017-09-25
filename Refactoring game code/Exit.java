@@ -15,7 +15,7 @@ public class Exit {
 	
 	/**
 	 * @param exitDirection A string for the exit's direction
-	 * @param Room A object of type Room for the neighbouringRoom exit
+	 * @param Room An object of type Room for the neighbouringRoom exit
 	 */
 	public Exit(String exitDirection, Room theRoom) {
 		if(exitDirection != null && theRoom != null) {
