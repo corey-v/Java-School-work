@@ -1,4 +1,8 @@
+import java.util.ArrayList;
+
 /**
+ * @author Corey Valentyne A00918598
+ * 
  * Class Room - a room in an adventure game.
  *
  * This class is part of the "World of Zuul" application. 
@@ -13,49 +17,61 @@
  */
 public class Room 
 {
-    public String description;
-    public Room northExit;
-    public Room southExit;
-    public Room eastExit;
-    public Room westExit;
-
+    private String description;
+    private ArrayList<Exit> exits; 
+    
+    
+    /**
+     * Default constructor for class Room
+     */
+    public Room() {
+    }
+    
     /**
      * Create a room described "description". Initially, it has
      * no exits. "description" is something like "a kitchen" or
      * "an open court yard".
      * @param description The room's description.
      */
-    public Room(String description) 
-    {
-        this.description = description;
+    public Room(String description) {
+        setDescription(description);
+        this.exits = new ArrayList<>();
     }
-
+    
     /**
-     * Define the exits of this room.  Every direction either leads
-     * to another room or is null (no exit there).
-     * @param north The north exit.
-     * @param east The east east.
-     * @param south The south exit.
-     * @param west The west exit.
+     * 
      */
-    public void setExits(Room north, Room east, Room south, Room west) 
-    {
-        if(north != null)
-            northExit = north;
-        if(east != null)
-            eastExit = east;
-        if(south != null)
-            southExit = south;
-        if(west != null)
-            westExit = west;
-    }
 
     /**
-     * @return The description of the room.
+     * @return The description of the room as a String
      */
     public String getDescription()
     {
-        return description;
+        	return this.description;
     }
-
+    
+    /**
+     * @param description A String for the room's description
+     */
+    public void setDescription(String description) {
+    	if(description != null) {
+    		this.description = description;
+    	}
+    }
+    
+    /**
+     * @param exit The exit object to add to the ArrayList
+     */
+    public void setExits(Exit exit) {
+    	if(exit != null) {
+    		this.exits.add(exit);
+    	}
+    }
+    
+    /**
+     * @return ArrayList<Exit> The exits ArrayList for the room
+     */
+    public ArrayList<Exit> getExits(){
+    	return this.exits;
+    }
 }

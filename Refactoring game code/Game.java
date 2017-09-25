@@ -1,4 +1,6 @@
 /**
+ * @author Corey Valentyne A00918598
+ * 
  *  This class is the main class of the "World of Zuul" application. 
  *  "World of Zuul" is a very simple, text based adventure game.  Users 
  *  can walk around some scenery. That's all. It should really be extended 
@@ -33,23 +35,31 @@ public class Game
      */
     private void createRooms()
     {
-        Room outside, theatre, pub, lab, office;
-      
-        // create the rooms
-        outside = new Room("outside the main entrance of the university");
-        theatre = new Room("in a lecture theatre");
-        pub = new Room("in the campus pub");
-        lab = new Room("in a computing lab");
-        office = new Room("in the computing admin office");
+        //Create rooms
+    	Room outside = new Room("outside the main entrance of the university");
+        Room theatre = new Room("in a lecture theatre");
+        Room pub = new Room("in the campus pub");
+        Room lab = new Room("in a computing lab");
+        Room office = new Room("in the computing admin office");
+    	
+        //set exits
+        outside.setExits(new Exit("east",theatre));
+        outside.setExits(new Exit("south",lab));
+        outside.setExits(new Exit("west", pub));
         
-        // initialise room exits
-        outside.setExits(null, theatre, lab, pub);
-        theatre.setExits(null, null, null, outside);
-        pub.setExits(null, outside, null, null);
-        lab.setExits(outside, office, null, null);
-        office.setExits(null, null, null, lab);
-
-        currentRoom = outside;  // start game outside
+        theatre.setExits(new Exit("west", outside));
+        
+        pub.setExits(new Exit("east", outside));
+        
+        lab.setExits(new Exit("north", outside));
+        lab.setExits(new Exit("east", office));
+        
+        office.setExits(new Exit("west", lab));
+        
+        //set current room
+        currentRoom = outside;
+    	
+    	
     }
 
     /**
@@ -82,18 +92,8 @@ public class Game
         System.out.println();
         System.out.println("You are " + currentRoom.getDescription());
         System.out.print("Exits: ");
-        if(currentRoom.northExit != null) {
-            System.out.print("north ");
-        }
-        if(currentRoom.eastExit != null) {
-            System.out.print("east ");
-        }
-        if(currentRoom.southExit != null) {
-            System.out.print("south ");
-        }
-        if(currentRoom.westExit != null) {
-            System.out.print("west ");
-        }
+        printExits();
+        
         System.out.println();
     }
 
@@ -154,17 +154,10 @@ public class Game
 
         // Try to leave current room.
         Room nextRoom = null;
-        if(direction.equals("north")) {
-            nextRoom = currentRoom.northExit;
-        }
-        if(direction.equals("east")) {
-            nextRoom = currentRoom.eastExit;
-        }
-        if(direction.equals("south")) {
-            nextRoom = currentRoom.southExit;
-        }
-        if(direction.equals("west")) {
-            nextRoom = currentRoom.westExit;
+        for(Exit theExits: currentRoom.getExits()) {
+        	if(theExits.getExitDirection().equalsIgnoreCase(direction)) {
+        		nextRoom = theExits.getTheRoom();
+        	}
         }
 
         if (nextRoom == null) {
@@ -174,18 +167,8 @@ public class Game
             currentRoom = nextRoom;
             System.out.println("You are " + currentRoom.getDescription());
             System.out.print("Exits: ");
-            if(currentRoom.northExit != null) {
-                System.out.print("north ");
-            }
-            if(currentRoom.eastExit != null) {
-                System.out.print("east ");
-            }
-            if(currentRoom.southExit != null) {
-                System.out.print("south ");
-            }
-            if(currentRoom.westExit != null) {
-                System.out.print("west ");
-            }
+            printExits();
+            
             System.out.println();
         }
     }
@@ -203,6 +186,12 @@ public class Game
         }
         else {
             return true;  // signal that we want to quit
+        }
+    }
+    
+    private void printExits() {
+    	for(Exit exits: currentRoom.getExits()) {
+        	System.out.print(exits.getExitDirection() + " ");
         }
     }
 }
