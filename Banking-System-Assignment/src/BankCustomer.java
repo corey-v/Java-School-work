@@ -1,8 +1,4 @@
 /**
- * 
- */
-
-/**
  * @author Corey Valentyne A00918598
  *
  */
@@ -19,7 +15,22 @@ public class BankCustomer {
 	 */
 	public BankCustomer() {
 	}
-
+	
+	/**
+	 * 
+	 * @param firstName String to initialize the firstName field
+	 * @param lastName String to initialize the lastName field
+	 * @param accountNumber String to initialize the accountNumber field
+	 * @param passCode String to initialize the passcode field
+	 */
+	public BankCustomer(String firstName, String lastName, String accountNumber, String passCode) {
+		setFirstName(firstName);
+		setLastName(lastName);
+		setAccountNumber(accountNumber);
+		setPassCode(passCode);
+		setBalance(0.0);
+	}
+	
 	/**
 	 * @return the firstName as a String
 	 */
@@ -28,10 +39,14 @@ public class BankCustomer {
 	}
 
 	/**
-	 * @param firstName the String to set as the first name
+	 * @param firstName the firstName to set
 	 */
 	public void setFirstName(String firstName) {
-		this.firstName = firstName;
+		if(isValidString(firstName)) {
+			this.firstName = firstName;
+		}else {
+			System.out.println("Please enter a valid first name");
+		}
 	}
 
 	/**
@@ -42,10 +57,14 @@ public class BankCustomer {
 	}
 
 	/**
-	 * @param lastName the String to set as the last name
+	 * @param lastName the lastName to set
 	 */
 	public void setLastName(String lastName) {
-		this.lastName = lastName;
+		if(isValidString(lastName)) {
+			this.lastName = lastName;
+		}else {
+			System.out.println("Please enter a valid last name");
+		}
 	}
 
 	/**
@@ -56,10 +75,14 @@ public class BankCustomer {
 	}
 
 	/**
-	 * @param accountNumber the String to set for the account number
+	 * @param accountNumber the accountNumber to set
 	 */
 	public void setAccountNumber(String accountNumber) {
-		this.accountNumber = accountNumber;
+		if(isValidString(accountNumber)) {
+			this.accountNumber = accountNumber;
+		}else {
+			System.out.println("Please enter a valid account number");
+		}
 	}
 
 	/**
@@ -70,10 +93,14 @@ public class BankCustomer {
 	}
 
 	/**
-	 * @param passCode the String for the passcode to set
+	 * @param passCode the passcode to set
 	 */
 	public void setPassCode(String passCode) {
-		this.passCode = passCode;
+		if(isValidString(passCode)) {
+			this.passCode = passCode;
+		}else {
+			System.out.println("Please enter a valid passcode");
+		}
 	}
 
 	/**
@@ -84,19 +111,46 @@ public class BankCustomer {
 	}
 
 	/**
-	 * @param balance the double for the balance to set
+	 * @param balance the balance to set
 	 */
 	public void setBalance(double balance) {
-		this.balance = balance;
+		if(isValidNumber(balance)) {
+			this.balance = balance;
+		}else {
+			System.out.println("Please enter a valid balance");
+		}
 	}
 	
 	/**
-	 * @param amount A double for the amount to add to balance
+	 * @param amount a double to add to the existing balance field
 	 */
 	public void addToBalance(double amount) {
-		this.balance += amount;
+		if(isValidNumber(amount)) {
+			this.balance += amount;
+		}else {
+			System.out.println("You cannot deposit a negative amount");
+		}
 	}
 	
+	/**
+	 * 
+	 * @param amount a double to subtract from the balance field
+	 */
+	public void subtractFromBalance(double amount) {
+		if(isValidNumber(amount)) {
+			this.balance -= amount;
+		}else {
+			System.out.println("You cannot withdraw a negative amount");
+		}
+	}
+	
+	
+	@Override
+	public String toString() {
+		return "BankCustomer [firstName=" + firstName + ", lastName=" + lastName + ", accountNumber=" + accountNumber
+				+ ", passCode=" + passCode + ", balance=" + balance + "]";
+	}
+
 	/*
 	 * Takes a string and checks against null and empty
 	 */
@@ -108,11 +162,16 @@ public class BankCustomer {
 		return valid;
 	}
 	
+	/*
+	 * Takes a double number and checks if it's positive
+	 */
 	public boolean isValidNumber(double number) {
 		boolean valid = false;
-		if(number > 0) {
+		if(number >= 0) {
 			valid = true;
 		}
 		return valid;
 	}
+	
+	
 }
