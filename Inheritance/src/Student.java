@@ -6,7 +6,7 @@ import java.util.Set;
  */
 
 /**
- * @author a00918598
+ * @author A00918598 Corey Valentyne
  *
  */
 public class Student extends Person{

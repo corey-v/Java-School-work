@@ -3,7 +3,7 @@
  */
 
 /**
- * @author a00918598
+ * @author A00918598 Corey Valentyne
  *
  */
 public class Person {

@@ -5,7 +5,7 @@ import java.util.ArrayList;
  */
 
 /**
- * @author a00918598
+ * @author a00918598 Corey Valentyne
  *
  */
 public class Database {
