@@ -23,11 +23,11 @@ public class Account {
 	 * @param accountNumber A String for the accountNumber to intialize
 	 * @param active A boolean for whether the account is active
 	 */
-	public Account(double balance, String accountNumber, boolean active) {
+	public Account(double balance, String accountNumber) {
 		super();
 		setBalance(balance);
 		setAccountNumber(accountNumber);
-		setActive(active);
+		setActive(true);
 		transactionInfo = new ArrayList<String>();
 	}
 
@@ -68,7 +68,7 @@ public class Account {
 	 * @param accountNumber A String for the accountNumber to set
 	 */
 	public void setAccountNumber(String accountNumber) {
-		if(accountNumber != null && accountNumber.length() > 0) {
+		if(isValidString(accountNumber)) {
 			this.accountNumber = accountNumber;
 		}
 	}
@@ -99,41 +99,9 @@ public class Account {
 	 * @param transaction A String for the transaction info to add
 	 */
 	public void addTransactionInfo(String transaction) {
-		if(transaction != null && transaction.length() > 0) {
+		if(isValidString(transaction)) {
 			this.transactionInfo.add(new Date().toString() + transaction);
 		}
-	}
-	
-	/**
-	 * 
-	 * @return an int for the number of cheques
-	 */
-	public int getNumberOfCheques() {
-		return 0;
-	}
-	
-	/**
-	 * 
-	 * @param numberOfCheques an int for the numberOfCheques to set
-	 */
-	public void setNumberOfCheques(int numberOfCheques) {
-		
-	}
-	
-	/**
-	 * 
-	 * @return An int for the interest rate
-	 */
-	public double getInterestRate() {
-		return 0;
-	}
-	
-	/**
-	 * 
-	 * @param interestRate A double for the interest rate
-	 */
-	public void setInterestRate(double interestRate) {
-		
 	}
 	
 	/* (non-Javadoc)
@@ -144,5 +112,13 @@ public class Account {
 		return "Account [balance=" + balance + ", accountNumber=" + accountNumber + ", active=" + active + "]";
 	}
 	
-	
+	/*
+	 * Takes a String and validates against null and empty
+	 */
+	private boolean isValidString(String theString) {
+		if(theString != null && theString.length() > 0) {
+			return true;
+		}
+		return false;
+	}
 }

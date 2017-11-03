@@ -23,8 +23,8 @@ public class SavingsAccount extends Account{
 	 * @param accountNumber A String for the accountNumber to intialize
 	 * @param active A boolean for whether the account is active
 	 */
-	public SavingsAccount(double balance, String accountNumber, boolean active) {
-		super(balance, accountNumber, active);
+	public SavingsAccount(double balance, String accountNumber) {
+		super(balance, accountNumber);
 	}
 	
 	/**

@@ -73,9 +73,9 @@ public class ATM {
 	 * Adds Customer references to the Bank HashMap as seed data for testing
 	 */
 	public void initialize() {
-		bank.createAccount(new BankCustomer("Jerry", "Seinfeld", "h2as2", 23, "CA"));
-		bank.createAccount(new BankCustomer("Harry", "Jones", "ju23a", 66, "CA"));
-		bank.createAccount(new BankCustomer("Jason", "Kruger", "ki39a", 54, "SA"));
+		bank.createAccount(new BankCustomer("Jerry", "Seinfeld", "h2as2", 23, "CA")); //Account Num: CA-0 Passcode: h2as2
+		bank.createAccount(new BankCustomer("Harry", "Jones", "ju23a", 66, "CA")); //Account Num: GA-1 Passcode: ju23a
+		bank.createAccount(new BankCustomer("Jason", "Kruger", "ki39a", 54, "SA")); //Account Num: SA-2 Passcode: ki39a
 	}
 	
 	/**

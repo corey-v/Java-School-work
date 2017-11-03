@@ -30,13 +30,13 @@ public class BankCustomer {
 		setPassCode(passCode);
 		setAge(age);
 		if(age >= 65) {
-			setMyAccount(new GoldAccount(0, "GA-" + Bank.accountTrack, true, 1.5));
+			setMyAccount(new GoldAccount(0, "GA-" + Bank.accountTrack, 1.5));
 			Bank.accountTrack++;
 		}else if(accountType.equalsIgnoreCase("CA")) {
-			setMyAccount(new ChequingAccount(0, "CA-" + Bank.accountTrack, true));
+			setMyAccount(new ChequingAccount(0, "CA-" + Bank.accountTrack));
 			Bank.accountTrack++;
 		}else {
-			setMyAccount(new SavingsAccount(0, "SA-"+ Bank.accountTrack, true));
+			setMyAccount(new SavingsAccount(0, "SA-"+ Bank.accountTrack));
 			Bank.accountTrack++;
 		}
 	}

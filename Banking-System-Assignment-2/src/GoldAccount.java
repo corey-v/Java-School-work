@@ -27,8 +27,8 @@ public class GoldAccount extends Account{
 	 * @param active A boolean for whether the account is active
 	 * @param interestRate a double for the interestRate to initialize
 	 */
-	public GoldAccount(double balance, String accountNumber, boolean active, double interestRate) {
-		super(balance, accountNumber, active);
+	public GoldAccount(double balance, String accountNumber, double interestRate) {
+		super(balance, accountNumber);
 		setInterestRate(interestRate);
 	}
 
@@ -80,11 +80,9 @@ public class GoldAccount extends Account{
 	 */
 	@Override
 	public String toString() {
-		return "GoldAccount [interestRate=" + interestRate + ", inOverdraft=" + inOverdraft + ", toString()="
-				+ super.toString() + "]";
+		return "GoldAccount [interestRate=" + interestRate + ", inOverdraft=" + inOverdraft + ", FEE=" + FEE
+				+ ", OVERDRAFT_AMT=" + OVERDRAFT_AMT + ", toString()=" + super.toString() + "]";
 	}
-
-	
 	
 	
 }

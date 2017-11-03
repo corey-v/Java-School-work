@@ -24,8 +24,8 @@ public class ChequingAccount extends Account{
 	 * @param accountNumber A String for the accountNumber to intialize
 	 * @param active A boolean for whether the account is active
 	 */
-	public ChequingAccount(double balance, String accountNumber, boolean active) {
-		super(balance, accountNumber, active);
+	public ChequingAccount(double balance, String accountNumber) {
+		super(balance, accountNumber);
 	}
 	
 	/**
@@ -73,14 +73,17 @@ public class ChequingAccount extends Account{
 			this.numberOfCheques = numberOfCheques;
 		}
 	}
-	
+
 	/* (non-Javadoc)
 	 * @see java.lang.Object#toString()
 	 */
 	@Override
 	public String toString() {
-		return "ChequingAccount [numberOfCheques=" + numberOfCheques + ", toString()=" + super.toString() + "]";
+		return "ChequingAccount [FEE=" + FEE + ", numberOfCheques=" + numberOfCheques + ", toString()="
+				+ super.toString() + "]";
 	}
+	
+	
 	
 	
 }
