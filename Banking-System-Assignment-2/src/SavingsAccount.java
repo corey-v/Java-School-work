@@ -3,7 +3,7 @@
  */
 
 /**
- * @author a00918598 Corey Valentyne
+ * @author a00918598 Corey Valentyne 
  *
  */
 public class SavingsAccount extends Account{
