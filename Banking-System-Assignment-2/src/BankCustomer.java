@@ -22,23 +22,12 @@ public class BankCustomer {
 	 * @param lastName String to initialize the lastName field
 	 * @param passCode String to initialize the passcode field
 	 * @param age int to initialize the age field
-	 * @param accountType A String designating which account to open
 	 */
-	public BankCustomer(String firstName, String lastName, String passCode, int age, String accountType) {
+	public BankCustomer(String firstName, String lastName, String passCode, int age) {
 		setFirstName(firstName);
 		setLastName(lastName);
 		setPassCode(passCode);
 		setAge(age);
-		if(age >= 65) {
-			setMyAccount(new GoldAccount(0, "GA-" + Bank.accountTrack, 1.5));
-			Bank.accountTrack++;
-		}else if(accountType.equalsIgnoreCase("CA")) {
-			setMyAccount(new ChequingAccount(0, "CA-" + Bank.accountTrack));
-			Bank.accountTrack++;
-		}else {
-			setMyAccount(new SavingsAccount(0, "SA-"+ Bank.accountTrack));
-			Bank.accountTrack++;
-		}
 	}
 	
 	/**

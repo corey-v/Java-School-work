@@ -73,9 +73,22 @@ public class ATM {
 	 * Adds Customer references to the Bank HashMap as seed data for testing
 	 */
 	public void initialize() {
-		bank.createAccount(new BankCustomer("Jerry", "Seinfeld", "h2as2", 23, "CA")); //Account Num: CA-0 Passcode: h2as2
-		bank.createAccount(new BankCustomer("Harry", "Jones", "ju23a", 66, "CA")); //Account Num: GA-1 Passcode: ju23a
-		bank.createAccount(new BankCustomer("Jason", "Kruger", "ki39a", 54, "SA")); //Account Num: SA-2 Passcode: ki39a
+		
+		BankCustomer[] customers = { new BankCustomer("Jerry", "Seinfeld", "h2as2", 23), //Account Num: CA-123 Passcode: h2as2
+				new BankCustomer("Harry", "Jones", "ju23a", 66), //Account Num: GA-123 Passcode: ju23a
+				new BankCustomer("Jason", "Kruger", "ki39a", 54) //Account Num: SA-123 Passcode: ki39a
+		};
+		
+		Account[] accounts = { new ChequingAccount(100, "CA-123"), new GoldAccount(200, "GA-123", 2),
+				new SavingsAccount(500, "SA-123")};
+		
+		for(int i = 0; i < customers.length; i++) {
+			customers[i].setMyAccount(accounts[i]);
+		}
+		
+		for(BankCustomer customer: customers) {
+			bank.createAccount(customer);
+		}
 	}
 	
 	/**
