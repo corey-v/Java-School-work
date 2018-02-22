@@ -1,3 +1,4 @@
+package ca.a00918598.data;
 /**
  * @author Corey Valentyne A00918598
  *

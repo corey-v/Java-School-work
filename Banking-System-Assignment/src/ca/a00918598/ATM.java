@@ -1,3 +1,7 @@
+package ca.a00918598;
+import InputReader;
+import ca.a00918598.data.BankCustomer;
+
 /**
  * @author Corey Valentyne A00918598
  *

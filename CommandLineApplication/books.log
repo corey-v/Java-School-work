@@ -1,0 +1,55 @@
+2018-02-06 13:20:12.459 [main] INFO  a00123456.book.BookStore - 2018-02-06T21:20:12.456Z
+2018-02-06 13:20:12.500 [main] INFO  a00123456.book.BookStore - Created Bcmc
+2018-02-06 13:20:12.505 [main] INFO  a00123456.book.BookStore - 2018-02-06T21:20:12.505Z
+2018-02-06 13:20:12.506 [main] INFO  a00123456.book.BookStore - Duration: 49 ms
+2018-02-06 13:20:21.488 [main] INFO  a00123456.book.BookStore - 2018-02-06T21:20:21.485Z
+2018-02-06 13:20:21.527 [main] INFO  a00123456.book.BookStore - Created Bcmc
+2018-02-06 13:52:00.156 [main] INFO  a00123456.book.BookStore - 2018-02-06T21:52:00.153Z
+2018-02-06 13:52:00.200 [main] INFO  a00123456.book.BookStore - Created Bcmc
+2018-02-06 13:52:15.663 [main] INFO  a00123456.book.BookStore - 2018-02-06T21:52:15.660Z
+2018-02-06 13:52:15.711 [main] INFO  a00123456.book.BookStore - Created Bcmc
+2018-02-06 13:52:15.717 [main] INFO  a00123456.book.BookStore - 2018-02-06T21:52:15.717Z
+2018-02-06 13:52:15.717 [main] INFO  a00123456.book.BookStore - Duration: 57 ms
+2018-02-06 13:54:23.678 [main] INFO  a00123456.book.BookStore - 2018-02-06T21:54:23.675Z
+2018-02-06 13:54:23.726 [main] INFO  a00123456.book.BookStore - Created Bcmc
+2018-02-06 13:54:23.732 [main] INFO  a00123456.book.BookStore - 2018-02-06T21:54:23.732Z
+2018-02-06 13:54:23.732 [main] INFO  a00123456.book.BookStore - Duration: 57 ms
+2018-02-06 13:54:40.643 [main] INFO  a00123456.book.BookStore - 2018-02-06T21:54:40.640Z
+2018-02-06 13:54:40.693 [main] INFO  a00123456.book.BookStore - Created Bcmc
+2018-02-06 13:54:40.700 [main] INFO  a00123456.book.BookStore - 2018-02-06T21:54:40.700Z
+2018-02-06 13:54:40.701 [main] INFO  a00123456.book.BookStore - Duration: 60 ms
+2018-02-06 13:55:17.904 [main] INFO  a00123456.book.BookStore - 2018-02-06T21:55:17.901Z
+2018-02-06 13:55:17.958 [main] INFO  a00123456.book.BookStore - Created Bcmc
+2018-02-06 13:55:17.965 [main] INFO  a00123456.book.BookStore - 2018-02-06T21:55:17.965Z
+2018-02-06 13:55:17.965 [main] INFO  a00123456.book.BookStore - Duration: 64 ms
+2018-02-21 17:56:51.858 [main] INFO  a00918598.book.BookStore - 2018-02-22T01:56:51.850Z
+2018-02-21 17:57:13.712 [main] INFO  a00918598.book.BookStore - 2018-02-22T01:57:13.707Z
+2018-02-21 17:57:13.789 [main] INFO  a00918598.book.BookStore - Created Bcmc
+2018-02-21 17:57:13.801 [main] INFO  a00918598.book.BookStore - 2018-02-22T01:57:13.801Z
+2018-02-21 17:57:13.802 [main] INFO  a00918598.book.BookStore - Duration: 94 ms
+2018-02-21 18:00:18.237 [main] INFO  a00918598.book.BookStore - 2018-02-22T02:00:18.230Z
+2018-02-21 18:00:18.326 [main] INFO  a00918598.book.BookStore - Created Bcmc
+2018-02-21 18:03:37.520 [main] INFO  a00918598.book.BookStore - 2018-02-22T02:03:37.515Z
+2018-02-21 18:03:37.592 [main] INFO  a00918598.book.BookStore - Created Bcmc
+2018-02-21 18:03:37.606 [main] INFO  a00918598.book.BookStore - 2018-02-22T02:03:37.606Z
+2018-02-21 18:03:37.607 [main] INFO  a00918598.book.BookStore - Duration: 91 ms
+2018-02-21 18:03:47.254 [main] INFO  a00918598.book.BookStore - 2018-02-22T02:03:47.250Z
+2018-02-21 18:03:47.339 [main] INFO  a00918598.book.BookStore - Created Bcmc
+2018-02-21 18:04:29.411 [main] INFO  a00918598.book.BookStore - 2018-02-22T02:04:29.406Z
+2018-02-21 18:04:29.516 [main] INFO  a00918598.book.BookStore - Created Bcmc
+2018-02-21 18:06:03.505 [main] INFO  a00918598.book.BookStore - 2018-02-22T02:06:03.500Z
+2018-02-21 18:06:03.587 [main] INFO  a00918598.book.BookStore - Created Bcmc
+2018-02-21 18:06:03.599 [main] INFO  a00918598.book.BookStore - 2018-02-22T02:06:03.599Z
+2018-02-21 18:06:03.600 [main] INFO  a00918598.book.BookStore - Duration: 99 ms
+2018-02-21 18:06:48.888 [main] INFO  a00918598.book.BookStore - 2018-02-22T02:06:48.880Z
+2018-02-21 18:06:48.975 [main] INFO  a00918598.book.BookStore - Created Bcmc
+2018-02-21 18:06:48.989 [main] INFO  a00918598.book.BookStore - 2018-02-22T02:06:48.989Z
+2018-02-21 18:06:48.990 [main] INFO  a00918598.book.BookStore - Duration: 109 ms
+2018-02-21 18:07:21.940 [main] INFO  a00918598.book.BookStore - 2018-02-22T02:07:21.934Z
+2018-02-21 18:07:22.029 [main] INFO  a00918598.book.BookStore - Created Bcmc
+2018-02-21 18:07:22.044 [main] INFO  a00918598.book.BookStore - 2018-02-22T02:07:22.044Z
+2018-02-21 18:07:22.045 [main] INFO  a00918598.book.BookStore - Duration: 110 ms
+2018-02-21 18:08:40.312 [main] INFO  a00918598.book.BookStore - 2018-02-22T02:08:40.308Z
+2018-02-21 18:08:40.388 [main] INFO  a00918598.book.BookStore - Created Bcmc
+2018-02-21 18:08:40.399 [main] INFO  a00918598.book.BookStore - 2018-02-22T02:08:40.399Z
+2018-02-21 18:08:40.400 [main] INFO  a00918598.book.BookStore - Duration: 91 ms
