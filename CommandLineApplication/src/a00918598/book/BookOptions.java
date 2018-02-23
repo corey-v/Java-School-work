@@ -1,6 +1,6 @@
 /**
- * Project: Books
- * File: BookReader.java
+ * Project: A00918598_Assignment1
+ * File: BookOptions.java
  */
 package a00918598.book;
 
