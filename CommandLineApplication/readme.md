@@ -1,4 +1,4 @@
-#Java Command-Line Application
+# Java Command-Line Application
 
 The purpose of this school project was to consolidate a variety of lessons and apply them to building a command-line application. We were given a couple files to start with including ApplicationException.java and BookOptions.java. Book Options includes the use of Apache Commons CLI to process command-line switch options.
 
